@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ImageView
+        android:id="@+id/imgBackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg_song_1" />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#66000000" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="6dp">
+
+        <TextView
+            android:id="@+id/tvNowPlaying"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Now Playing"
+            android:textColor="#FFFFFF"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/visualizerCard"
+            android:layout_width="240dp"
+            android:layout_height="240dp"
+            android:layout_marginTop="28dp"
+            app:cardCornerRadius="28dp"
+            app:cardElevation="8dp"
+            app:cardUseCompatPadding="true"
+            app:layout_constraintTop_toBottomOf="@id/tvNowPlaying"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/lottieVisualizer"
+                    android:layout_width="220dp"
+                    android:layout_height="220dp"
+                    android:layout_gravity="center"
+                    app:lottie_fileName="Voice.json"
+                    app:lottie_autoPlay="false"
+                    app:lottie_loop="true"/>
+
+
+
+                <ImageView
+                    android:id="@+id/imgArtwork"
+                    android:layout_width="180dp"
+                    android:layout_height="180dp"
+                    android:layout_gravity="center"
+                    android:scaleType="centerCrop"
+                    android:background="@drawable/bg_color"
+                    android:src="@drawable/artwork_1"/>
+
+            </FrameLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <LinearLayout
+            android:id="@+id/songContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="20dp"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:background="@android:color/transparent"
+            app:layout_constraintTop_toBottomOf="@id/visualizerCard"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <VideoView
+                android:id="@+id/videoIcon"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginEnd="8dp"/>
+
+            <TextView
+                android:id="@+id/tvSongName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="My Audio Track"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:background="@android:color/transparent"/>
+        </LinearLayout>
+
+
+        <SeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:thumb="@drawable/seekbar_thumb"
+            android:progressDrawable="@drawable/seekbar_progress"
+            app:layout_constraintTop_toBottomOf="@id/songContainer"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+
+        <ImageButton
+            android:id="@+id/btnPlayPause"
+            android:layout_width="85dp"
+            android:layout_height="85dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/bg_circle_outline"
+            android:src="@drawable/play_button"
+            android:scaleType="centerInside"
+            android:padding="8dp"
+            app:tint="@null"
+            app:layout_constraintTop_toBottomOf="@id/seekBar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:contentDescription="Play/Pause"/>
+
+
+        <ImageButton
+            android:id="@+id/btnBack5"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:padding="12dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/bg_circle_outline"
+            android:src="@drawable/back_icon"
+            app:tint="#FFFFFF"
+            app:layout_constraintTop_toTopOf="@id/btnPlayPause"
+            app:layout_constraintBottom_toBottomOf="@id/btnPlayPause"
+            app:layout_constraintEnd_toStartOf="@id/btnPlayPause"
+            android:contentDescription="Back 5 seconds"/>
+
+
+        <ImageButton
+            android:id="@+id/btnForward10"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:padding="12dp"
+            android:layout_marginStart="20dp"
+            android:background="@drawable/bg_circle_outline"
+            android:src="@drawable/next_icon"
+            app:tint="#FFFFFF"
+            app:layout_constraintTop_toTopOf="@id/btnPlayPause"
+            app:layout_constraintBottom_toBottomOf="@id/btnPlayPause"
+            app:layout_constraintStart_toEndOf="@id/btnPlayPause"
+            android:contentDescription="Forward 10 seconds"/>
+
+        <ImageButton
+            android:id="@+id/btnPrev"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="90dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/bg_circle_outline"
+            android:src="@drawable/ic_prev_15"
+            app:tint="#FFFFFF"
+            app:layout_constraintTop_toBottomOf="@id/btnBack5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btnPlayPause"
+            android:contentDescription="Previous"/>
+
+
+        <ImageButton
+            android:id="@+id/btnNext"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginEnd="90dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/bg_circle_outline"
+            android:src="@drawable/ic_next_15"
+            app:tint="#FFFFFF"
+            app:layout_constraintTop_toBottomOf="@id/btnForward10"
+            app:layout_constraintStart_toEndOf="@id/btnPlayPause"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:contentDescription="Next"/>
+
+
+        <TextView
+            android:id="@+id/tvHint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enjoy your music"
+            android:textColor="#66FFFFFF"
+            android:textSize="12sp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
