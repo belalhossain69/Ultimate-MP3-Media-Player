@@ -35,5 +35,7 @@ The app focuses on smooth audio playback, system-level media controls, and a cle
 
 ## 📸 Screenshots
 
-![Ultimate MP3 Media Player UI](screenshots/Picsart_26-01-05_13-27-20-645.jpg)
+<p align="center">
+  <img src="screenshots/Picsart_26-01-05_13-27-20-645.jpg" width="300" />
+</p>
 
