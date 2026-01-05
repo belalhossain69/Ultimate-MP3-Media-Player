@@ -34,8 +34,7 @@ The app focuses on smooth audio playback, system-level media controls, and a cle
 ---
 
 ## 📸 Screenshots
+<img width="1080" height="1350" alt="image" src="https://github.com/user-attachments/assets/95e05412-5118-4f42-aa27-ab1c343badd8" />
 
-<p align="center">
-  <img src="screenshots/Picsart_26-01-05_13-27-20-645.jpg" width="300" />
-</p>
+
 
